@@ -1,0 +1,11 @@
+json5
+nibabel
+numpy
+Pillow
+sacred
+scikit-image
+SimpleITK
+tqdm
+monai==0.7
+pydicom
+opencv-python
