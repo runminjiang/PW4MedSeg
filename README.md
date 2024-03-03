@@ -1,11 +1,21 @@
-# PW3MedSeg：Enhancing Weakly Supervised 3D Medical Image Segmentation through Probabilistic-aware Learning
+# Enhancing Weakly Supervised 3D Medical Image Segmentation through Probabilistic-aware Learning
 
 
 
 ## Abstract:
 
-3D medical image segmentation is a challenging task  with crucial implications for disease diagnosis and treatment planning. Recent advances in deep learning have  significantly enhanced fully supervised medical image segmentation. However, this approach heavily relies on labor-intensive and time-consuming fully annotated ground-truth  labels, particularly for 3D volumes. To overcome this limitation, we propose a novel probabilistic-aware weakly supervised learning pipeline, specifically designed for 3D  medical imaging. Our pipeline integrates three innovative  components: a Probability-based Pseudo Label Generation technique for synthesizing dense segmentation masks  from sparse annotations, a Probabilistic Multi-head Self-Attention network for robust feature extraction within our  Probabilistic Transformer Network, and a Probability- informed Segmentation Loss Function to enhance training  with annotation confidence. Demonstrating significant advances, our approach not only rivals the performance of  fully supervised methods, but also surpasses existing weakly  supervised methods in CT and MRI datasets, achieving up  to 18.1% improvement in Dice scores for certain organs.
+3D medical image segmentation is a challenging task  with crucial implications for disease diagnosis and treatment planning. Recent advances in deep learning have  significantly enhanced fully supervised medical image segmentation. However, this approach heavily relies on labor-intensive and time-consuming fully annotated ground-truth  labels, particularly for 3D volumes. To overcome this limitation, we propose a novel probabilistic-aware weakly supervised learning pipeline, specifically designed for 3D  medical imaging. Our pipeline integrates three innovative  components: a Probability-based Pseudo Label Generation technique for synthesizing dense segmentation masks  from sparse annotations, a Probabilistic Multi-head Self-Attention network for robust feature extraction within our  Probabilistic Transformer Network, and a Probability- informed Segmentation Loss Function to enhance training  with annotation confidence. Demonstrating significant advances, our approach not only rivals the performance of  fully supervised methods but also surpasses existing weakly  supervised methods in CT and MRI datasets, achieving up  to 18.1% improvement in Dice scores for certain organs.
 
+## Contribution
+![Alt text](/images/.pdf)
+
+- **Probabilistic-aware Framework**: We introduce a novel probabilistic-aware weakly supervised learning pipeline. Through a comprehensive series of tests, we demonstrate that our method not only significantly enhances performance compared to state-of-the-art weakly supervised methods but also achieves results comparable to fully supervised approaches, highlighting its substantial real-world applicability.
+
+- **Probability-based Pseudo Label Generation**: Within the framework, we innovate by converting sparse 3D point labels into comprehensive dense annotations, leveraging principles from the uncertainty model. This innovative approach minimizes the typical information loss associated with weak labels and enhances segmentation accuracy. Additionally, we simulated the diversity of real-world raw data to test the practicality of our method and achieved promising results.
+
+- **Probabilistic Multi-head Self-Attention (PMSA)**: A critical component of our probabilistic transformer network, it effectively addresses the inherent class variance and noise found in pseudo labels. It plays a pivotal role in enhancing segmentation performance by capturing and utilizing the probabilistic distributions of input-output mappings.
+
+- **Probability-informed Segmentation Loss Function**: To complement the framework, we introduce a novel loss function that incorporates the annotator's confidence level. This loss function aligns the segmentation process more closely with actual boundaries and captures the probabilistic nature of the segmentation task. It also plays a crucial role in reducing the bias in confidence allocation during model training.
 
 
 ## 1. Installation
