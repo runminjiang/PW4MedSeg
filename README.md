@@ -1,13 +1,11 @@
 # Enhancing Weakly Supervised 3D Medical Image Segmentation through Probabilistic-aware Learning
 
-
-
-## Abstract:
+## Abstract
 
 3D medical image segmentation is a challenging task  with crucial implications for disease diagnosis and treatment planning. Recent advances in deep learning have  significantly enhanced fully supervised medical image segmentation. However, this approach heavily relies on labor-intensive and time-consuming fully annotated ground-truth  labels, particularly for 3D volumes. To overcome this limitation, we propose a novel probabilistic-aware weakly supervised learning pipeline, specifically designed for 3D  medical imaging. Our pipeline integrates three innovative  components: a Probability-based Pseudo Label Generation technique for synthesizing dense segmentation masks  from sparse annotations, a Probabilistic Multi-head Self-Attention network for robust feature extraction within our  Probabilistic Transformer Network, and a Probability- informed Segmentation Loss Function to enhance training  with annotation confidence. Demonstrating significant advances, our approach not only rivals the performance of  fully supervised methods but also surpasses existing weakly  supervised methods in CT and MRI datasets, achieving up  to 18.1% improvement in Dice scores for certain organs.
 
 ## Contribution
-![Alt text](/images/.pdf)
+![Framework](/images/framework.png)
 
 - **Probabilistic-aware Framework**: We introduce a novel probabilistic-aware weakly supervised learning pipeline. Through a comprehensive series of tests, we demonstrate that our method not only significantly enhances performance compared to state-of-the-art weakly supervised methods but also achieves results comparable to fully supervised approaches, highlighting its substantial real-world applicability.
 
