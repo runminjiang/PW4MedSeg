@@ -19,13 +19,13 @@
 ## 1. Installation
 **Please note the version of monai**
 ```
-git clone https://github.com/runminjiang/PW3MedSeg.git
+git clone https://github.com/runminjiang/PW4MedSeg.git
 
-cd PW3MedSeg
+cd PW4MedSeg
 
-conda create -n PW3MedSeg python==3.9
+conda create -n PW4MedSeg python==3.9
 
-conda activate PW3MedSeg
+conda activate PW4MedSeg
 
 pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
 
