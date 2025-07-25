@@ -27,6 +27,11 @@ for multi_label in multi_labels:
     print(numpySpacing, numpyImage.shape)  ## numpy Image 是只有0和1(代表图片里这个像素点是黑还是白)
     # 需要转化成坐标的形式
 
+    if numpyImage.dtype not in [np.float32, np.float64]:
+        numpyImage = numpyImage.astype(np.float32)
+        if numpyImage.max() > 1:
+            numpyImage /= numpyImage.max()
+
     spacing_transform = Spacing(pixdim=(1 / numpySpacing[2], 1 / numpySpacing[0], 1 / numpySpacing[1]), mode="nearest")
     numpyImage = spacing_transform(torch.tensor(np.expand_dims(numpyImage, axis=0)))[0][0]
     print(numpyImage.shape)
@@ -49,6 +54,11 @@ for multi_image in multi_images:
     numpySpacing = np.array((sitk_img.GetSpacing()))  # # [z, y, x]
     print(numpySpacing, numpyImage.shape)  ## numpy Image 是只有0和1(代表图片里这个像素点是黑还是白)
     # 需要转化成坐标的形式
+
+    if numpyImage.dtype not in [np.float32, np.float64]:
+        numpyImage = numpyImage.astype(np.float32)
+        if numpyImage.max() > 1:
+            numpyImage /= numpyImage.max()
 
     spacing_transform = Spacing(pixdim=(1 / numpySpacing[2], 1 / numpySpacing[0], 1 / numpySpacing[1]), mode="bilinear")
     numpyImage = spacing_transform(torch.tensor(np.expand_dims(numpyImage, axis=0)))[0][0]
