@@ -1,0 +1,157 @@
+{
+  "name": "MSCMRSEG LV Cavity - Correct Split",
+  "description": "Correct train/val/test split based on original challenge",
+  "labels": {
+    "0": "background",
+    "1": "lv_cavity"
+  },
+  "training": [
+    {
+      "image": "dataset/mscmrseg/image_iso/image_6.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_6.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_6.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_7.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_7.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_7.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_8.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_8.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_8.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_9.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_9.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_9.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_10.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_10.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_10.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_11.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_11.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_11.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_12.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_12.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_12.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_13.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_13.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_13.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_14.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_14.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_14.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_15.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_15.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_15.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_16.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_16.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_16.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_17.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_17.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_17.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_18.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_18.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_18.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_19.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_19.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_19.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_20.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_20.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_20.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_21.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_21.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_21.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_22.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_22.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_22.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_23.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_23.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_23.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_24.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_24.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_24.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_25.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_25.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_25.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_26.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_26.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_26.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_27.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_27.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_27.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_28.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_28.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_28.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_29.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_29.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_29.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_30.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr/label_30.nii.gz",
+      "label_thres": "dataset/mscmrseg/lv_cavity/p_200_d_10/labelsTr_thres/label_30.nii.gz"
+    }
+  ],
+  "validation": [
+    {
+      "image": "dataset/mscmrseg/image_iso/image_1.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/labelsTr_gt/label_1.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_2.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/labelsTr_gt/label_2.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_3.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/labelsTr_gt/label_3.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_4.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/labelsTr_gt/label_4.nii.gz"
+    },
+    {
+      "image": "dataset/mscmrseg/image_iso/image_5.nii.gz",
+      "label": "dataset/mscmrseg/lv_cavity/labelsTr_gt/label_5.nii.gz"
+    }
+  ]
+}

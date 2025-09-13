@@ -61,10 +61,15 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
     for idx, batch_data in enumerate(loader):
         if isinstance(batch_data, list):
             data, target = batch_data
+            distance_map = None
         else:
             data, target = batch_data["image"], batch_data["label"]
+            # Extract distance map if available
+            distance_map = batch_data.get("distance_map", None)
         #print(str(args.gpu))
         data, target = data.cuda(device = args.gpu), target.cuda(args.gpu)
+        if distance_map is not None:
+            distance_map = distance_map.cuda(device = args.gpu)
         for param in model.parameters():
             param.grad = None
         with autocast(enabled=args.amp):
@@ -72,7 +77,11 @@ def train_epoch(model, loader, optimizer, scaler, epoch, loss_func, args):
             #print(logits.shape)
             #target[target>0.5] = 1
             #target[target<=0.5] = 0
-            loss,dice,nll = loss_func(logits, target, nll_losses) #########
+            # Pass distance_map to loss function if using CE_Dice_Boundary_Loss
+            if hasattr(loss_func, 'w_boundary'):
+                loss,dice,nll = loss_func(logits, target, distance_map, nll_losses) #########
+            else:
+                loss,dice,nll = loss_func(logits, target, nll_losses) #########
             #print(math.isnan(loss))
 
 

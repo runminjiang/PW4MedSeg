@@ -1,0 +1,30 @@
+[project]
+name = "pw4medseg"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "einops>=0.8.1",
+    "h5py>=3.14.0",
+    "json5>=0.12.1",
+    "kagglehub>=0.3.13",
+    "monai==0.7",
+    "nibabel>=5.3.2",
+    "numpy>=1.26.3",
+    "opencv-python>=4.11.0.86",
+    "pillow>=11.0.0",
+    "pydicom>=2.4.4",
+    "sacred>=0.8.7",
+    "scikit-image>=0.24.0",
+    "simpleitk>=2.5.2",
+    "tensorboardx>=2.6.4",
+    "torch==1.12.1+cu113",
+    "torchaudio==0.12.1",
+    "torchvision==0.13.1+cu113",
+    "tqdm>=4.66.5",
+    "wandb>=0.21.3",
+]
+
+[[tool.uv.index]]
+url = "https://download.pytorch.org/whl/cu113"

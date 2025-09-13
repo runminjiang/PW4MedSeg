@@ -89,6 +89,12 @@ parser.add_argument("--resume_ckpt", action="store_true", help="resume training 
 parser.add_argument("--resume_jit", action="store_true", help="resume training from pretrained torchscript checkpoint")
 parser.add_argument("--smooth_dr", default=1e-6, type=float, help="constant added to dice denominator to avoid nan")
 parser.add_argument("--smooth_nr", default=0.0, type=float, help="constant added to dice numerator to avoid zero")
+parser.add_argument("--loss_type", default="focal", type=str,
+                    choices=["weighted_focal_dice", "ce_dice", "ce_dice_boundary", "focal", "ce", "dice", "dice_prob"],
+                    help="type of loss function to use")
+parser.add_argument("--w_ce", default=1.0, type=float, help="weight for cross-entropy loss")
+parser.add_argument("--w_dice", default=1.0, type=float, help="weight for dice loss")
+parser.add_argument("--w_boundary", default=0.01, type=float, help="weight for boundary loss")
 
 
 def main():
@@ -148,14 +154,65 @@ def main_worker(gpu, args, wandb_writer):
     else:
         raise ValueError("Unsupported model " + str(args.model_name))
 
-    # dice_loss = Weighted_Focal_DiceLoss(squared_pred=True, smooth_nr=args.smooth_nr, smooth_dr=args.smooth_dr,
-    #                                     w_nll=args.w_nll)
-    # dice_loss = CE_DiceLoss(squared_pred = True, smooth_nr=args.smooth_nr, smooth_dr=args.smooth_dr,w_nll = args.w_nll)
-    # dice_loss = my_DiceLoss( squared_pred = True, smooth_nr=args.smooth_nr, smooth_dr=args.smooth_dr)
-    # dice_loss = my_DiceLoss_prob( squared_pred = True, smooth_nr=args.smooth_nr, smooth_dr=args.smooth_dr)
-    # dice_loss = CE_Loss(squared_pred = True, smooth_nr=args.smooth_nr, smooth_dr=args.smooth_dr,w_nll = args.w_nll)
-    dice_loss = Focal_Loss(squared_pred=True, smooth_nr=args.smooth_nr, smooth_dr=args.smooth_dr, w_nll=args.w_nll)
-    # dice_loss = slice_Loss(squared_pred = True, smooth_nr=args.smooth_nr, smooth_dr=args.smooth_dr,w_nll = args.w_nll)
+    # Select loss function based on args.loss_type
+    from utils.loss import (
+        Weighted_Focal_DiceLoss, CE_DiceLoss, CE_Dice_Boundary_Loss,
+        Focal_Loss, CE_Loss, my_DiceLoss, my_DiceLoss_prob
+    )
+    
+    if args.loss_type == "weighted_focal_dice":
+        dice_loss = Weighted_Focal_DiceLoss(
+            squared_pred=True, 
+            smooth_nr=args.smooth_nr, 
+            smooth_dr=args.smooth_dr,
+            w_nll=args.w_nll
+        )
+    elif args.loss_type == "ce_dice":
+        dice_loss = CE_DiceLoss(
+            squared_pred=True, 
+            smooth_nr=args.smooth_nr, 
+            smooth_dr=args.smooth_dr,
+            w_nll=args.w_nll
+        )
+    elif args.loss_type == "ce_dice_boundary":
+        dice_loss = CE_Dice_Boundary_Loss(
+            squared_pred=True, 
+            smooth_nr=args.smooth_nr, 
+            smooth_dr=args.smooth_dr,
+            w_ce=args.w_ce,
+            w_dice=args.w_dice,
+            w_boundary=args.w_boundary
+        )
+    elif args.loss_type == "focal":
+        dice_loss = Focal_Loss(
+            squared_pred=True, 
+            smooth_nr=args.smooth_nr, 
+            smooth_dr=args.smooth_dr,
+            w_nll=args.w_nll
+        )
+    elif args.loss_type == "ce":
+        dice_loss = CE_Loss(
+            squared_pred=True, 
+            smooth_nr=args.smooth_nr, 
+            smooth_dr=args.smooth_dr,
+            w_nll=args.w_nll
+        )
+    elif args.loss_type == "dice":
+        dice_loss = my_DiceLoss(
+            squared_pred=True, 
+            smooth_nr=args.smooth_nr, 
+            smooth_dr=args.smooth_dr
+        )
+    elif args.loss_type == "dice_prob":
+        dice_loss = my_DiceLoss_prob(
+            squared_pred=True, 
+            smooth_nr=args.smooth_nr, 
+            smooth_dr=args.smooth_dr
+        )
+    else:
+        raise ValueError(f"Unknown loss type: {args.loss_type}")
+    
+    print(f"Using loss function: {args.loss_type}")
     # post_label = AsDiscrete(to_onehot=True, n_classes=args.out_channels)  #Execute after model forward to transform model output to discrete values
     # post_pred = AsDiscrete(argmax=True, to_onehot=True, n_classes=args.out_channels)
     post_label_0 = AsDiscrete(threshold_values=True)
